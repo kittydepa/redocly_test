@@ -1,0 +1,26 @@
+post:
+  tags:
+    -  Auth
+  summary: Login with inline description
+  description: |
+    This endpoint logs in a user.
+
+    - Accepts email and password.
+    - Returns a JWT access token on success.
+    - Returns 401 if credentials are invalid.
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            email:
+              type: string
+            password:
+              type: string
+  responses:
+    '200':
+      description: Successful login
+    '401':
+      description: Unauthorized
